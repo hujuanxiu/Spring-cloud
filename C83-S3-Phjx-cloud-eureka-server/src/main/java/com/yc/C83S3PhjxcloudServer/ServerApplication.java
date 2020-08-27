@@ -9,10 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableEurekaServer
 @SpringBootApplication
-public class C83S3PhjxCloudServerApplication implements WebMvcConfigurer{
+public class ServerApplication implements WebMvcConfigurer{
 
 	public static void main(String[] args) {
-		SpringApplication.run(C83S3PhjxCloudServerApplication.class, args);
+		SpringApplication.run(ServerApplication.class, args);
 	}
 	
 	

@@ -27,4 +27,18 @@ public class OrderAction {
 		String res=restTemplate.getForObject(url, String.class);
 		return res;
 	}
+	
+	@Resource
+	IUserAction iua;
+	
+	@GetMapping("user1")
+	public String user1() {
+		//声明式远程服务调用
+		return iua.user();
+	}
+	
+	
+	
+	
+	
 }
