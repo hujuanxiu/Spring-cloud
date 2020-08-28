@@ -6,11 +6,15 @@ spring:
       name: server
 
 eureka:
+   instance:
+      hostname: es1
    client:
-      registerWithEureka: false
-      fetchRegistry: false
+      registerWithEureka: true
+      fetchRegistry: true
       serviceUrl: 
-         defaultZone: http://127.0.0.1:7999/eureka,http://127.0.0.1:7998/eureka
+         defaultZone: http://es2:7999/eureka,http://es3:7998/eureka
+      server:
+         enable-self-preservation: false
          
 ---
 spring:
@@ -18,20 +22,20 @@ spring:
 server:
    port: 7999
 eureka:
+   instance:
+      hostname: es2
    client:
-      registerWithEureka: false
-      fetchRegistry: false
       serviceUrl: 
-         defaultZone: http://127.0.0.1:8000/eureka,http://127.0.0.1:7998/eureka
+         defaultZone: http://es1:8000/eureka,http://es3:7998/eureka
 ---  
 spring:
    profiles: server2
 server:
    port: 7998
 eureka:
+   instance:
+      hostname: es3
    client:
-      registerWithEureka: false
-      fetchRegistry: false
       serviceUrl: 
-         defaultZone: http://127.0.0.1:7999/eureka,http://127.0.0.1:8000/eureka
+         defaultZone: http://es2:7999/eureka,http://es1:8000/eureka
         
