@@ -1,0 +1,12 @@
+server:
+   port: 8003
+   
+# 定义当前服务名
+spring:
+   application:
+      name: cruser
+   datasource:
+      url: jdbc:mysql://127.0.0.1/c83-s3-phjx-crbook?serverTimezone=UTC
+      username: root
+      password: hjx199836
+      driver-class-name: com.mysql.cj.jdbc.Driver
