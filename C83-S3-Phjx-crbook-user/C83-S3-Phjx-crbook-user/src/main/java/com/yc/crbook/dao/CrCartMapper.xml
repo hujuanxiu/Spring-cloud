@@ -9,9 +9,6 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <association property="book" column="bid" select="selectBook"></association>
 
-
-	
-    
   </resultMap>
   
   <select id="selectBook" resultType="com.yc.crbook.bean.CrBook">
